@@ -9,7 +9,7 @@ const Section = ({
   rightbtn,
   imgsrc,
   imgsrcR,
-  textBig
+  textBig,
 }) => {
   console.log(imgsrcR);
   return (
@@ -83,6 +83,12 @@ const Wrap = styled.div`
   @media (max-width: 400px) {
     padding: 140px 0px 20px 0;
   }
+  @media (max-height: 850px) {
+    padding: 100px 0px 0px 0;
+  }
+  @media (max-height: 5450px) {
+    padding: 60px 0px 0px 0;
+  }
 `;
 const Infodiv = styled.div`
   display: flex;
@@ -91,36 +97,45 @@ const Infodiv = styled.div`
   font-family: "Gotham SSm";
   overflow: hidden;
   h1 {
-    font-size: ${(props) => `${props.big===true?'34px':'40px'}`};
+    font-size: ${(props) => `${props.big === true ? "34px" : "40px"}`};
     color: #171a20;
     font-family: "Manrope", sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
     @media (max-width: 600px) {
-      font-size: ${(props) => `${props.big===true?'27px':'36px'}`};
+      font-size: ${(props) => `${props.big === true ? "27px" : "36px"}`};
     }
     @media (max-width: 500px) {
-      font-size: ${(props) => `${props.big===true?'27px':'36px'}`};
+      font-size: ${(props) => `${props.big === true ? "27px" : "36px"}`};
     }
     @media (max-width: 400px) {
-      font-size: ${(props) => `${props.big===true?'27px':'38px'}`};
+      font-size: ${(props) => `${props.big === true ? "27px" : "38px"}`};
+    }
+    @media (max-height: 5450px) {
+      font-size: ${(props) => `${props.big === true ? "25px" : "30px"}`};
     }
   }
   p {
     color: #171a20;
-    font-size: ${(props) => `${props.big===true?'14px':'17px'}`};
+    font-size: ${(props) => `${props.big === true ? "14px" : "17px"}`};
     font-family: "Manrope", sans-serif;
     font-weight: 500;
-    text-decoration: ${(props) => `${props.big===true?'':'underline'}`};
+    text-decoration: ${(props) => `${props.big === true ? "" : "underline"}`};
     line-height: 2;
     @media (max-width: 600px) {
-      font-size: ${(props) => `${props.big===true?'14px':'16px'}`};
+      font-size: ${(props) => `${props.big === true ? "14px" : "16px"}`};
       // text-decoration: none;
     }
     @media (max-width: 400px) {
-      font-size: ${(props) => `${props.big===true?'14px':'17px'}`};
-      line-height: 1.2;
+      font-size: ${(props) => `${props.big === true ? "14px" : "17px"}`};
+      line-height: 1;
+      overflow: hidden;
       text-decoration: none;
+    }
+    @media (max-height: 545px) {
+      font-size: ${(props) => `${props.big === true ? "12px" : "15px"}`};
+      line-height: .8;
+      font-weight: 400;
     }
   }
 `;
@@ -143,45 +158,47 @@ const Btndiv = styled.div`
   }
 `;
 const Buttonleft = styled.div`
-      background: rgb(23 26 32 / 80%);
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      width: 265px;
-      margin: 10px;
-      padding: 11px 24px;
-      border-radius: 2px;
-      color: white;
-      cursor: pointer;
-      border-radius:5px;
-      font-size: 14px
-      text-align: center;
-      p{
-            text-align: center;
-            @media (max-width: 600px){
-                  font-size: 14px;
-                  font-family: 'Manrope', sans-serif;
-                  font-weight: 500;
-            }
-      }
-      @media (max-width: 850px){ 
-            width: 220px;
-      }
-      @media (max-width: 600px){
-            width: 92vw;
-            margin: 10px 10px;
-            padding: 8px 20px;
-            font-size: 12px;
-            text-align: center;
-            padding: 10px 20px;
-      }
-      @media (max-width: 400px){
-            width: 90vw;
-            margin: 10px 5px;
-            padding: 10px 20px;
-            font-size: 11px;
-            text-align: center;
-      }
-      
+  background: rgb(23 26 32 / 80%);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  width: 265px;
+  margin: 10px;
+  padding: 11px 24px;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  border-radius:5px;
+  font-size: 14px
+  text-align: center;
+  p{
+    text-align: center;
+    @media (max-width: 600px){
+      font-size: 14px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+    }
+    @media (max-height: 545px) {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 850px){ 
+    width: 220px;
+  }
+  @media (max-width: 600px){
+    width: 92vw;
+    margin: 10px 10px;
+    padding: 8px 20px;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  @media (max-width: 400px){
+    width: 90vw;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 11px;
+    text-align: center;
+  }
 `;
 const Buttonright = styled(Buttonleft)`
   background: rgb(244 244 244 / 65%);
