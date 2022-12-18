@@ -171,8 +171,8 @@ const Thirddiv = styled.div`
   }
 `;
 const Hamburger = styled.div`
-  z-index: 999;
-  overflow: hidden;
+  z-index: 9;
+  overflow: scroll;
   position: fixed;
   top: 0;
   right: 0;
@@ -181,13 +181,58 @@ const Hamburger = styled.div`
   transition: transform 400ms ease-in;
   padding: 0px 35px;
   width: 15vw;
-  min-height: 100vh;
   font-size: 14px;
   background: white;
   color: #393c41;
   display: flex;
   flex-direction: column;
-  
+  li {
+    list-style-type: none;
+    margin: 12px 0px;
+    overflow: visible;
+  }
+  #close {
+    height: 50px;
+    position: relative;
+    z-index: 1000;
+    button {
+      padding: 5px 10px 2px 10px;
+      border-radius: 10px;
+      background: lightgrey;
+      position: fixed;
+      top: 16px;
+      right: 30px;
+      border: none;
+      z-index: 1000;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      color: #000;
+      z-index: 1000;
+    }
+  }
+
+  #global {
+    margin: 7px 0px;
+    display: flex;
+    align-items: center;
+    overflow-x: visible;
+    height: 50px;
+    svg {
+      width: 20px;
+      margin-right: 10px;
+    }
+    span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
   @media (max-width: 1400px) {
     width: 25vw;
   }
@@ -205,51 +250,10 @@ const Hamburger = styled.div`
     font-size: 0.9em;
     letter-spacing: 1px;
   }
-  #close {
-    width: 100%;
-    height: 50px;
-    position: relative;
-    overflow: hidden;
-    button {
-      padding: 5px 10px 2px 10px;
-      border-radius: 10px;
-      background: lightgrey;
-      position: absolute;
-      top: 10px;
-      border: none;
-      right: 10px;
-    }
-    svg {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      color: #000;
-    }
+  @media (max-height: 800px) {
+    font-size: 12px;
   }
-  li {
-    list-style-type: none;
-    margin: 12px 0px;
-    a {
-      text-decoration: none;
-      color: grey;
-    }
-  }
-
-  #global {
-    margin: 7px 0px;
-    display: flex;
-    align-items: center;
-    svg {
-      width: 20px;
-      margin-right: 10px;
-    }
-    span {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      p {
-        font-size: 12px;
-      }
-    }
+  @media (max-height: 650px) {
+    padding: 40px 35px 20px 35px;
   }
 `;
