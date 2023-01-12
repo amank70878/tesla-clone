@@ -11,7 +11,6 @@ const Section = ({
   imgsrcR,
   textBig,
 }) => {
-  console.log(imgsrcR);
   return (
     <>
       <Wrap bgImage={imgsrc} resbgImage={imgsrcR}>
@@ -58,6 +57,7 @@ export default Section;
 const Wrap = styled.div`
   color: #171a20;
   background-image: ${(props) => `url(/images/${props.bgImage})`};
+  scroll-snap-align: start;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -65,6 +65,7 @@ const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 150px 0px 20px 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,7 +87,7 @@ const Wrap = styled.div`
   @media (max-height: 850px) {
     padding: 100px 0px 0px 0;
   }
-  @media (max-height: 5450px) {
+  @media (max-height: 450px) {
     padding: 60px 0px 0px 0;
   }
 `;
@@ -134,7 +135,7 @@ const Infodiv = styled.div`
     }
     @media (max-height: 545px) {
       font-size: ${(props) => `${props.big === true ? "12px" : "15px"}`};
-      line-height: .8;
+      line-height: 0.8;
       font-weight: 400;
     }
   }
@@ -167,24 +168,24 @@ const Buttonleft = styled.div`
   border-radius: 2px;
   color: white;
   cursor: pointer;
-  border-radius:5px;
-  font-size: 14px
+  border-radius: 5px;
+  font-size: 14px;
   text-align: center;
-  p{
+  p {
     text-align: center;
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       font-size: 14px;
-      font-family: 'Manrope', sans-serif;
+      font-family: "Manrope", sans-serif;
       font-weight: 500;
     }
     @media (max-height: 545px) {
       font-size: 14px;
     }
   }
-  @media (max-width: 850px){ 
+  @media (max-width: 850px) {
     width: 220px;
   }
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     width: 92vw;
     margin: 10px 10px;
     padding: 8px 20px;
@@ -192,7 +193,7 @@ const Buttonleft = styled.div`
     text-align: center;
     padding: 10px 20px;
   }
-  @media (max-width: 400px){
+  @media (max-width: 400px) {
     width: 90vw;
     margin: 10px 5px;
     padding: 10px 20px;
