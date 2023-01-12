@@ -172,7 +172,8 @@ const Thirddiv = styled.div`
 `;
 const Hamburger = styled.div`
   z-index: 9;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: fixed;
   top: 0;
   right: 0;
